@@ -8,7 +8,7 @@ body {
 
 @layer base {
   :root {
-    /* Light Theme - Professional Blue, White, Vibrant Green Accent */
+    /* Light Theme - Royal Blue, White, Vibrant Green Accent */
     --background: 0 0% 100%; /* White */
     --foreground: 210 40% 9%; /* Dark Gray for text */
 
@@ -18,7 +18,7 @@ body {
     --popover: 0 0% 100%; /* White */
     --popover-foreground: 210 40% 9%; /* Dark Gray */
 
-    --primary: 209 98% 58%; /* Professional Blue #2E9AFE */
+    --primary: 225 73% 63%; /* Royal Blue #4169E1 */
     --primary-foreground: 0 0% 100%; /* White */
 
     --secondary: 0 0% 96.1%; /* Light Gray */
@@ -35,7 +35,7 @@ body {
 
     --border: 0 0% 89.8%; /* Light Gray Border */
     --input: 0 0% 89.8%; /* Light Gray Input */
-    --ring: 209 98% 58%; /* Professional Blue Ring */
+    --ring: 225 73% 63%; /* Royal Blue Ring */
 
     --chart-1: 12 76% 61%;
     --chart-2: 173 58% 39%;
@@ -67,7 +67,7 @@ body {
     --popover: 210 40% 5%; /* Very Dark Blue/Gray */
     --popover-foreground: 0 0% 98%; /* White */
 
-    --primary: 209 98% 58%; /* Professional Blue #2E9AFE */
+    --primary: 225 73% 63%; /* Royal Blue #4169E1 */
     --primary-foreground: 0 0% 100%; /* White */
 
     --secondary: 210 40% 12%; /* Darker Gray */
@@ -84,7 +84,7 @@ body {
 
     --border: 210 40% 15%; /* Dark Border */
     --input: 210 40% 15%; /* Dark Input */
-    --ring: 209 98% 58%; /* Professional Blue Ring */
+    --ring: 225 73% 63%; /* Royal Blue Ring */
 
     --chart-1: 220 70% 50%;
     --chart-2: 160 60% 45%;
