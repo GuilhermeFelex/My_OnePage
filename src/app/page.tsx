@@ -3,6 +3,7 @@
 
 import { Button } from "@/components/ui/button";
 import { ServiceCard } from "@/components/service-card";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"; // Import Avatar components
 import { Briefcase, Bot, Mail, Phone, Link as LinkIcon, Linkedin, Rocket, CheckCircle, BarChartHorizontal, MessageSquareText } from 'lucide-react';
 
 // Define experience data directly in the component
@@ -121,7 +122,14 @@ export default function Home() {
 
       {/* Experience Section */}
       <section className="w-full max-w-4xl mb-16">
-        <h2 className="text-3xl font-semibold text-center mb-10">Experiência Profissional</h2>
+        <h2 className="text-3xl font-semibold text-center mb-6">Experiência Profissional</h2>
+        <div className="flex flex-col items-center mb-10">
+          <Avatar className="w-24 h-24 mb-4">
+            <AvatarImage src="https://picsum.photos/100/100" alt="Guilherme Felex" data-ai-hint="profile picture" />
+            <AvatarFallback>GF</AvatarFallback>
+          </Avatar>
+          <h3 className="text-2xl font-semibold text-primary">Guilherme Felex</h3>
+        </div>
         <div className="space-y-8">
           {experiences.map((exp, index) => (
             <div key={index} className="bg-card p-6 rounded-lg shadow-md">
