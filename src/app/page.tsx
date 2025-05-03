@@ -1,4 +1,5 @@
 
+
 'use client';
 
 import { useState } from 'react'; // Import useState
@@ -66,10 +67,10 @@ const experiences = [
   // Add more experiences if needed
 ];
 
+// Control visibility of the presentation section via code
+const showPresentationSection = true; // Set to false to hide the section
 
 export default function Home() {
-  // State to control the visibility of the presentation section
-  const [showPresentation, setShowPresentation] = useState(true); // Default to shown
 
   return (
     <main className="flex min-h-screen flex-col items-center p-4 sm:p-8 md:p-12 bg-background text-foreground">
@@ -91,23 +92,25 @@ export default function Home() {
         </Button>
       </section>
 
-      {/* Presentation Section */}
-      <section className="w-full max-w-4xl mb-16">
-         <Accordion type="single" collapsible defaultValue="item-1" className="w-full">
-           <AccordionItem value="item-1">
-             <AccordionTrigger className="text-3xl font-semibold text-center mb-10 justify-center">
-                 Apresentação
-              </AccordionTrigger>
-             <AccordionContent>
-               <div className="bg-card p-6 rounded-lg shadow-md text-center">
-                  <p className="text-lg text-muted-foreground">
-                   Bem-vindo à SynergyFlow Solutions! Somos especialistas em otimizar o atendimento ao cliente através da automação e integração de sistemas. Nossa missão é ajudar sua empresa a alcançar novos níveis de eficiência e satisfação do cliente. Explore nossos serviços e descubra como podemos transformar seu negócio.
-                  </p>
-               </div>
-             </AccordionContent>
-           </AccordionItem>
-         </Accordion>
-      </section>
+      {/* Presentation Section - Conditionally Rendered */}
+      {showPresentationSection && (
+        <section className="w-full max-w-4xl mb-16">
+           <Accordion type="single" collapsible defaultValue="item-1" className="w-full">
+             <AccordionItem value="item-1">
+               <AccordionTrigger className="text-3xl font-semibold text-center mb-10 justify-center">
+                   Apresentação
+                </AccordionTrigger>
+               <AccordionContent>
+                 <div className="bg-card p-6 rounded-lg shadow-md text-center">
+                    <p className="text-lg text-muted-foreground">
+                     Bem-vindo à SynergyFlow Solutions! Somos especialistas em otimizar o atendimento ao cliente através da automação e integração de sistemas. Nossa missão é ajudar sua empresa a alcançar novos níveis de eficiência e satisfação do cliente. Explore nossos serviços e descubra como podemos transformar seu negócio.
+                    </p>
+                 </div>
+               </AccordionContent>
+             </AccordionItem>
+           </Accordion>
+        </section>
+      )}
 
 
       {/* Services Section */}
@@ -243,3 +246,4 @@ export default function Home() {
      </main>
    );
  }
+
