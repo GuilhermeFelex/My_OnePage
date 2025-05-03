@@ -20,7 +20,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR"> {/* Changed language to Portuguese */}
+    <html lang="pt-BR">{/* Changed language to Portuguese */}
       <body className={`${geistSans.variable} font-sans antialiased`}> {/* Using Geist Sans font */}
         {children}
         <Toaster /> {/* Added Toaster for potential future notifications */}
