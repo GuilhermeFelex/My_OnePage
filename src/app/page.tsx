@@ -3,8 +3,8 @@
 
 import { Button } from "@/components/ui/button";
 import { ServiceCard } from "@/components/service-card";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"; // Import Avatar components
-import { Briefcase, Bot, Mail, Phone, Link as LinkIcon, Linkedin, Rocket, CheckCircle, BarChartHorizontal, MessageSquareText } from 'lucide-react';
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Briefcase, Bot, Mail, Phone, Link as LinkIcon, Linkedin, Rocket, CheckCircle, BarChartHorizontal, MessageSquareText, Instagram, Youtube } from 'lucide-react'; // Added Instagram, Youtube
 
 // Define experience data directly in the component
 const experiences = [
@@ -122,10 +122,10 @@ export default function Home() {
 
       {/* Experience Section */}
       <section className="w-full max-w-4xl mb-16">
-        <h2 className="text-3xl font-semibold text-center mb-6">Experiência Profissional</h2>
+        <h2 className="text-3xl font-semibold text-center mb-10">Experiência Profissional</h2>
         <div className="flex flex-col items-center mb-10">
           <Avatar className="w-24 h-24 mb-4">
-            <AvatarImage src="https://picsum.photos/100/100" alt="Guilherme Felex" data-ai-hint="profile picture" />
+            <AvatarImage src="https://picsum.photos/100/100" alt="Guilherme Felex" data-ai-hint="profile picture person" />
             <AvatarFallback>GF</AvatarFallback>
           </Avatar>
           <h3 className="text-2xl font-semibold text-primary">Guilherme Felex</h3>
@@ -154,13 +154,14 @@ export default function Home() {
         </div>
       </section>
 
+
       {/* Contact Section */}
       <section id="contact-section" className="w-full max-w-4xl text-center border-t pt-12">
          <h2 className="text-3xl font-semibold mb-6">Pronto para Transformar Seu Negócio?</h2>
           <p className="text-lg mb-8 text-muted-foreground">
-           Descubra como nossas soluções podem ser aplicadas à sua realidade. Entre em contato para uma conversa sem compromisso.
+           Descubra como nossas soluções podem ser aplicadas à sua realidade. Entre em contato ou siga-nos nas redes sociais.
          </p>
-         <div className="flex flex-col sm:flex-row justify-center gap-4">
+         <div className="flex flex-col sm:flex-row flex-wrap justify-center items-center gap-4"> {/* Added flex-wrap and items-center */}
             {/* Option 1: Mailto Link */}
             <a href="mailto:contato@synergyflow.com?subject=Interesse em Soluções de Automação" className="inline-block">
                 <Button className="bg-accent text-accent-foreground hover:bg-accent/90">
@@ -169,21 +170,42 @@ export default function Home() {
             </a>
            {/* Option 2: Link to phone */}
            <a href="tel:+550000000000" className="inline-block">
-             <Button className="bg-primary text-primary-foreground hover:bg-primary/90"> {/* Using primary color */}
+             <Button className="bg-primary text-primary-foreground hover:bg-primary/90">
                <Phone className="mr-2 h-4 w-4" /> Ligar Agora
              </Button>
            </a>
             {/* Option 3: Link to WhatsApp */}
            <a href="https://wa.me/550000000000?text=Olá! Tenho interesse nas soluções da SynergyFlow." target="_blank" rel="noopener noreferrer" className="inline-block">
               <Button variant="outline">
-                <MessageSquareText className="mr-2 h-4 w-4" /> {/* Use Lucide icon */}
+                <MessageSquareText className="mr-2 h-4 w-4" />
                 WhatsApp
               </Button>
            </a>
            {/* Option 4: Link to external form */}
            <a href="https://forms.gle/your-google-form-link" target="_blank" rel="noopener noreferrer" className="inline-block"> {/* Replace with your actual form link */}
              <Button variant="outline">
-               <LinkIcon className="mr-2 h-4 w-4" /> Formulário de Contato
+               <LinkIcon className="mr-2 h-4 w-4" /> Formulário
+             </Button>
+           </a>
+           {/* Option 5: Instagram Link */}
+           <a href="https://instagram.com/your-profile" target="_blank" rel="noopener noreferrer" className="inline-block">
+             <Button variant="outline" size="icon">
+               <Instagram className="h-4 w-4" />
+               <span className="sr-only">Instagram</span> {/* Accessibility */}
+             </Button>
+           </a>
+            {/* Option 6: YouTube Link */}
+           <a href="https://youtube.com/your-channel" target="_blank" rel="noopener noreferrer" className="inline-block">
+             <Button variant="outline" size="icon">
+               <Youtube className="h-4 w-4" />
+                <span className="sr-only">YouTube</span> {/* Accessibility */}
+             </Button>
+           </a>
+           {/* Option 7: LinkedIn Link */}
+           <a href="https://www.linkedin.com/in/guilhermefelex/" target="_blank" rel="noopener noreferrer" className="inline-block">
+             <Button variant="outline" size="icon">
+               <Linkedin className="h-4 w-4" />
+                <span className="sr-only">LinkedIn</span> {/* Accessibility */}
              </Button>
            </a>
          </div>
@@ -191,3 +213,4 @@ export default function Home() {
      </main>
    );
  }
+
