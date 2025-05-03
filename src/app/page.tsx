@@ -1,8 +1,9 @@
 
+'use client';
+
 import { Button } from "@/components/ui/button";
 import { ServiceCard } from "@/components/service-card";
-import { Briefcase, Bot, Mail, Phone, Link as LinkIcon, Linkedin } from 'lucide-react'; // Added Linkedin
-import { Rocket, CheckCircle, BarChartHorizontal } from 'lucide-react'; // Icons for data points
+import { Briefcase, Bot, Mail, Phone, Link as LinkIcon, Linkedin, Rocket, CheckCircle, BarChartHorizontal, MessageSquareText } from 'lucide-react';
 
 // Define experience data directly in the component
 const experiences = [
@@ -42,7 +43,18 @@ const experiences = [
         "Automação de tarefas utilizando Python e SQL.",
         "Suporte à equipe na interpretação de dados e geração de insights."
     ]
-  }
+  },
+   {
+      title: "Analista de Projetos e Processos",
+      company: "Datainfo",
+      duration: "jun de 2023 - o momento · 1 ano 2 meses",
+      location: "Campinas, São Paulo, Brasil · Híbrido",
+      description: [
+        "Atuo como Analista de Projetos e Processos na Datainfo, alocado em um cliente do setor elétrico.",
+        "Minhas responsabilidades incluem o gerenciamento de projetos utilizando metodologias ágeis e tradicionais, mapeamento e otimização de processos (BPMN), e análise de dados para suporte à tomada de decisão.",
+        "Tenho experiência em ferramentas como Jira e Power BI."
+      ]
+    }
   // Add more experiences if needed
 ];
 
@@ -58,7 +70,12 @@ export default function Home() {
         <p className="text-lg sm:text-xl mb-8 text-muted-foreground">
           Automatize, Integre e Otimize seu Atendimento ao Cliente.
         </p>
-        <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
+        <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90" onClick={() => {
+          const contactSection = document.getElementById('contact-section');
+          if (contactSection) {
+            contactSection.scrollIntoView({ behavior: 'smooth' });
+          }
+        }}>
           Fale Conosco Agora
         </Button>
       </section>
@@ -120,51 +137,49 @@ export default function Home() {
             </div>
           ))}
           <div className="text-center mt-6">
-             <Button asChild variant="link" className="text-primary hover:underline">
-                 <a href="https://www.linkedin.com/in/guilhermefelex/" target="_blank" rel="noopener noreferrer">
+             <a href="https://www.linkedin.com/in/guilhermefelex/" target="_blank" rel="noopener noreferrer" className="inline-block">
+                 <Button variant="link" className="text-primary hover:underline">
                    <Linkedin className="mr-2 h-4 w-4" /> Ver Perfil Completo no LinkedIn
-                 </a>
-             </Button>
+                 </Button>
+             </a>
            </div>
         </div>
       </section>
 
       {/* Contact Section */}
-      <section className="w-full max-w-4xl text-center border-t pt-12">
+      <section id="contact-section" className="w-full max-w-4xl text-center border-t pt-12">
          <h2 className="text-3xl font-semibold mb-6">Pronto para Transformar Seu Negócio?</h2>
           <p className="text-lg mb-8 text-muted-foreground">
            Descubra como nossas soluções podem ser aplicadas à sua realidade. Entre em contato para uma conversa sem compromisso.
          </p>
          <div className="flex flex-col sm:flex-row justify-center gap-4">
             {/* Option 1: Mailto Link */}
-            <Button asChild className="bg-accent text-accent-foreground hover:bg-accent/90">
-               <a href="mailto:contato@synergyflow.com?subject=Interesse em Soluções de Automação">
-                 <Mail className="mr-2 h-4 w-4" /> Enviar Email
-               </a>
-            </Button>
+            <a href="mailto:contato@synergyflow.com?subject=Interesse em Soluções de Automação" className="inline-block">
+                <Button className="bg-accent text-accent-foreground hover:bg-accent/90">
+                  <Mail className="mr-2 h-4 w-4" /> Enviar Email
+                </Button>
+            </a>
            {/* Option 2: Link to phone */}
-           <Button asChild className="bg-primary text-primary-foreground hover:bg-primary/90"> {/* Using primary color */}
-             <a href="tel:+550000000000">
+           <a href="tel:+550000000000" className="inline-block">
+             <Button className="bg-primary text-primary-foreground hover:bg-primary/90"> {/* Using primary color */}
                <Phone className="mr-2 h-4 w-4" /> Ligar Agora
-             </a>
-           </Button>
+             </Button>
+           </a>
             {/* Option 3: Link to WhatsApp */}
-           <Button asChild variant="outline">
-              <a href="https://wa.me/550000000000?text=Olá! Tenho interesse nas soluções da SynergyFlow." target="_blank" rel="noopener noreferrer">
-                <svg className="mr-2 h-4 w-4" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16.75 13.96c.25.13.41.3.46.5.05.2.03.43-.08.62-.1.2-.26.38-.48.53-.22.15-.48.23-.77.23-.29 0-.58-.08-.84-.23-.26-.15-.48-.3-.64-.43l-.11-.1-2.96-1.72a7.53 7.53 0 0 1-1.4-1.88c-.15-.26-.23-.54-.23-.84 0-.3.08-.58.23-.84.15-.26.35-.5.6-.7.25-.2.53-.35.84-.46.3-.1.62-.15.94-.15.32 0 .63.05.9.15.28.1.53.24.74.43l.17.17.64.65c.18.18.3.35.38.48.08.14.12.28.12.43 0 .14-.04.28-.12.43-.08.14-.2.28-.38.42l-.4.47c-.08.1-.12.18-.12.26 0 .08.04.18.12.27l1.17 1.38c.16.18.3.3.4.35.1.04.18.06.24.06.06 0 .13-.02.18-.06.06-.04.1-.1.14-.18l.3-.47c.14-.22.3-.38.48-.48.18-.1.38-.15.6-.15s.4.05.58.15c.18.1.34.23.46.4zm4.2-8.9a10 10 0 0 0-14.9 14.9A10 10 0 0 0 12 22a10 10 0 0 0 8.95-5.04zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"></path></svg>
+           <a href="https://wa.me/550000000000?text=Olá! Tenho interesse nas soluções da SynergyFlow." target="_blank" rel="noopener noreferrer" className="inline-block">
+              <Button variant="outline">
+                <MessageSquareText className="mr-2 h-4 w-4" /> {/* Use Lucide icon */}
                 WhatsApp
-              </a>
-           </Button>
+              </Button>
+           </a>
            {/* Option 4: Link to external form */}
-           <Button asChild variant="outline">
-             <a href="https://forms.gle/your-google-form-link" target="_blank" rel="noopener noreferrer"> {/* Replace with your actual form link */}
+           <a href="https://forms.gle/your-google-form-link" target="_blank" rel="noopener noreferrer" className="inline-block"> {/* Replace with your actual form link */}
+             <Button variant="outline">
                <LinkIcon className="mr-2 h-4 w-4" /> Formulário de Contato
-             </a>
-           </Button>
+             </Button>
+           </a>
          </div>
        </section>
      </main>
    );
  }
- 
-    
