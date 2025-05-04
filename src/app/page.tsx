@@ -1,7 +1,3 @@
-
-
-'use client';
-
 import { useState } from 'react'; // Import useState
 import { Button } from "@/components/ui/button";
 import { ServiceCard } from "@/components/service-card";
